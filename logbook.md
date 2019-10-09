@@ -1,4 +1,5 @@
-#### Day 1: after a lecture on Monday I went home and installed Nextflow through the Ubuntu App.
+#### Day 1: 
+after a lecture on Monday I went home and installed Nextflow through the Ubuntu App.
 This involved wrestling with the command line, so I have put a command line glossary in my repo
 for the benefit of future me and any other beginners that pass this way.
 On Monday we picked up a lot of resources about NextFlow and ideas about parallel computing, 
@@ -12,9 +13,10 @@ once that is done INPUT and OUTPUT can be clearly defined, OUTPUT can be cached,
 eg in KNIME in a relational database (ie not in memory) and a consequence is that you can parallelise.
 - the structure is Open Source
 - It is useful to ask yourself: can I explain the code in my assignments as a workflow?
-- Why yet another workflow `Nextflow` ?
-##### Nextflow
+#### Nextflow:
+Why yet another workflow?
 ` https://www.nextflow.io/index.html#Features `
+
 Recent, since 2017. One design decision was not to make it graphical. 
 Information channels link nodes.
-You can see some examples on openrisknet
+You can see some examples on `openrisknet.org`
