@@ -1,0 +1,20 @@
+#### Day 1: after a lecture on Monday I went home and installed Nextflow through the Ubuntu App.
+This involved wrestling with the command line, so I have put a command line glossary in my repo
+for the benefit of future me and any other beginners that pass this way.
+On Monday we picked up a lot of resources about NextFlow and ideas about parallel computing, 
+today Wednesday was a practical session during which I set up the Assignment 3 repository and peopled it with some files.
+Egon provided us with templates,  simple for Nextflow, and a short .tsv file to start us off.
+#### Lecture 1: 
+- emphasis on parallel computing
+- examples of workflow systems : KNIME, Apache Taverna, BIOVIA
+- a very important abstraction is the drawing of boundaries around each component (node), 
+once that is done INPUT and OUTPUT can be clearly defined, OUTPUT can be cached, passed around, stored
+eg in KNIME in a relational database (ie not in memory) and a consequence is that you can parallelise.
+- the structure is Open Source
+- It is useful to ask yourself: can I explain the code in my assignments as a workflow?
+- Why yet another workflow `Nextflow` ?
+##### Nextflow
+` https://www.nextflow.io/index.html#Features `
+Recent, since 2017. One design decision was not to make it graphical. 
+Information channels link nodes.
+You can see some examples on openrisknet
