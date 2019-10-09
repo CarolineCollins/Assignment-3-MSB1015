@@ -19,7 +19,8 @@ Here on the README note the results of a comparison of computation times on diff
 - Markdown `https://www.markdownguide.org/basic-syntax`
 
 ### References
-Plante J, Werner S. JPlogP: an improved logP predictor trained using predicted data. Journal of Cheminformatics. 2018;10(1):61.
+- Plante J, Werner S. JPlogP: an improved logP predictor trained using predicted data. Journal of Cheminformatics. 2018;10(1):61.
+- Di Tommaso P, Chatzou M, Floden EW, Barja PP, Palumbo E, Notredame C. Nextflow enables reproducible computational workflows. Nature biotechnology. 2017;35(4):316-9.
 
 ### Thought for the day:
 `"Mistakes can and will happen, but by encouraging researchers to be open about them 
