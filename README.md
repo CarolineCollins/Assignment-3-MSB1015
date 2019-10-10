@@ -8,6 +8,7 @@ Here on the README note the results of a comparison of computation times on diff
 ### How to make it run?
               
 ### Useful resources:
+- WikiData SPARQL query `https://query.wikidata.org/`
 - CDK `https://github.com/egonw/cdkbook`
 - CDK `http://cdk.github.io/cdk/latest/docs/api/index.html`
 - 2D depictions of molecules `https://github.com/cdk/depict`
