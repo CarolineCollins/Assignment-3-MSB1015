@@ -20,3 +20,16 @@ Why yet another workflow?
 Recent, since 2017. One design decision was not to make it graphical. 
 Information channels link nodes.
 You can see some examples on `openrisknet.org`
+
+#### Day 2:
+after a big Windows update last night, I reopen the Ubuntu app
+and, due to my lack of ability with the command line interface,
+no longer able to understand how to get the `simple.nf` to run anymore.
+I try ` ./nextflow simple.nf ` .
+Nextflow launches but can't find the tsv file.
+I try ls -al to find out what files are in my directory.
+I try the same code as yesterday, but get the error message
+`No such file: /home/caroliine/short.tsv`
+My user name is caroliine, I had forgotten that.
+It seems this is my home directory (probably you return there at every restart(?)).
+Need to spend some time doing command line tutorials, it seems.
