@@ -30,6 +30,7 @@ Nextflow launches but can't find the tsv file.
 I try ls -al to find out what files are in my directory.
 I try the same code as yesterday, but get the error message
 `No such file: /home/caroliine/short.tsv`
-My user name is caroliine, I had forgotten that.
-It seems this is my home directory (probably you return there at every restart(?)).
+My user name is caroliine, I had forgotten that. (the command whoami will remind me next time!)
+It seems this is my home directory (probably you return there at every restart(?)). (home directory is AKA ~)
 Need to spend some time doing command line tutorials, it seems.
+Feeling more happy after some time spent on the tutorial.
