@@ -42,3 +42,4 @@ Network Biology - at work on the other (parallel - ;) course)
 Awake at 5am thinking about this, so... 
 ? * con*cat*enate
 > >> less q
+rm -i   seems like a good option to avoid catastrophic accidental deletions
