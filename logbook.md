@@ -5,7 +5,7 @@ for the benefit of future me and any other beginners that pass this way.
 On Monday we picked up a lot of resources about NextFlow and ideas about parallel computing, 
 today Wednesday was a practical session during which I set up the Assignment 3 repository and peopled it with some files.
 Egon provided us with templates,  simple for Nextflow, and a short .tsv file to start us off.
-#### Lecture 1: 
+##### Lecture 1: 
 - emphasis on parallel computing
 - examples of workflow systems : KNIME, Apache Taverna, BIOVIA
 - a very important abstraction is the drawing of boundaries around each component (node), 
@@ -13,16 +13,41 @@ once that is done INPUT and OUTPUT can be clearly defined, OUTPUT can be cached,
 eg in KNIME in a relational database (ie not in memory) and a consequence is that you can parallelise.
 - the structure is Open Source
 - It is useful to ask yourself: can I explain the code in my assignments as a workflow?
-#### Nextflow:
+##### Nextflow:
 Why yet another workflow?
 ` https://www.nextflow.io/index.html#Features `
 
 Recent, since 2017. One design decision was not to make it graphical. 
 Information channels link nodes.
 You can see some examples on `openrisknet.org`
-Egon's opinion: one defect of N is that it is hard to see what is going on in background.
-This makes it super-important to document what you think is going on.
-
+Egon's opinion: 
+- one defect of N is that it is hard to see what is going on in background.
+ This makes it super-important to document what you think is going on.
+ I struggle to see the data in the channel
+ I cannot easily how many processes have started
+- NB reading from a channel is not at all the same as reading from a file eg
+ the order is not guaranteed
+- The multiline string defined within """   """ is something Groovy will run on the command line
+- N is smart, but not v transparent, so you need to make up for this in your documentation.
+- Manon asks in what platform we will be working - coding in a plain text editor like Notepad
+ with extension ".nf"
+- Docker: the nodes in the workflow can be Docker images, eg:
+  """
+  blast
+  cat
+  """
+ where blast and cat are 2 programs AKA *microservices*
+ the smallest Docker is around 30MB
+ Docker get started is a useful resource; "fire up one of these nodes"
+ the nodes are isolated modular bits of functionality IN -> thing -> OUT
+ Docker image is a bit like an App
+ Docker Hub a bit like an App Store
+ (even includes its own OS therefore easy to move around between machines
+ eg. if you need persistence of data you can keep a DB in there)
+ docker pull thing
+ docker run thing
+ - busybox is a small very small Linux-based OS
+ 
 #### Day 2:
 after a big Windows update last night, I reopen the Ubuntu app
 and, due to my lack of ability with the command line interface,
@@ -38,6 +63,24 @@ Need to spend some time doing command line tutorials, it seems.
 Feeling more happy after some time spent on the tutorial. ~ / relative and absolute paths clearer now
 
 #### Day 3:
+##### Instructions for Assignment Task
+JPlogP values; molecules encoded as SMILES
+start input file with SMILES
+use CDK to calculate JPlogP values (a measure of hydrophobicity a good predictor of biological properties)
+outline of expected repository
+experiment runs on laptop
+with 1,2, or 4 CPU's in use
+and report the effect on total computation time
+maybe even obtain a plot of this. Time: lowest, highest values.
+SMILES: JPlogP what is the Min, max, median JPlogP value of all the c.159,000 SMILES 
+Expect to see 4 cores is not 4 times as fast.
+Expect 159,000 molecules from WikiData
+The building blocks have been provided in github/egonw
+In addition, the cdkbook on github/egonw contains a lot of Groovy code eg
+code ReadSMILES.groovy
+The difference between logP descriptor (not open source) 
+                   and JPlogP (open source) (Plante reference in Readme)
+Learn how to write code that "catches" exceptions eg LogP "throws an exception" if wrong SMILES
 Network Biology - at work on the other (parallel - ;) course)
 
 #### Day 4:
