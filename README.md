@@ -8,6 +8,8 @@ Here on the README note the results of a comparison of computation times on diff
 ### How to make it run?
 #### Input
 #### Output
+#### How to adapt the code for reuse
+If you want to make the calculation for a different set of molecules change ...
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
