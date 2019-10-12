@@ -64,24 +64,33 @@ Feeling more happy after some time spent on the tutorial. ~ / relative and absol
 
 #### Day 3:
 ##### Instructions for Assignment Task
-JPlogP values; molecules encoded as SMILES
-start input file with SMILES
-use CDK to calculate JPlogP values (a measure of hydrophobicity a good predictor of biological properties)
-outline of expected repository
+- JPlogP values; 
+- molecules encoded as SMILES
+- start input file with SMILES
+- use CDK to calculate JPlogP values (a measure of hydrophobicity a good predictor of biological properties)
+- outline of expected repository
 experiment runs on laptop
 with 1,2, or 4 CPU's in use
 and report the effect on total computation time
-maybe even obtain a plot of this. Time: lowest, highest values.
-SMILES: JPlogP what is the Min, max, median JPlogP value of all the c.159,000 SMILES 
+maybe even obtain a plot of this. Time: lowest, highest values, maybe
+a graph that compares different times on different numbers of threads 
+to calculate JPlogP on 159,000 molecules.
+put this on the README in a text table for ease of comparison
+(note that Egon will not try to reproduce these calc time results)
+from SMILES: JPlogP 
+pass to R (optional) and calc. (can also be done in Nextflow for extra points!)
+what is the Min, max, median JPlogP value of all the c.159,000 SMILES 
 Expect to see 4 cores is not 4 times as fast.
 Expect 159,000 molecules from WikiData
-The building blocks have been provided in github/egonw
+- The building blocks have been provided in github/egonw
+simple.nf "passes but does not calculate"
+we must create a function that passes the file and creates a logP value for each molecule
+we can ask stackoverflow how to define afunction in Groovy
 In addition, the cdkbook on github/egonw contains a lot of Groovy code eg
 code ReadSMILES.groovy
-The difference between logP descriptor (not open source) 
+- The difference between logP descriptor (not open source) 
                    and JPlogP (open source) (Plante reference in Readme)
-Learn how to write code that "catches" exceptions eg LogP "throws an exception" if wrong SMILES
-Network Biology - at work on the other (parallel - ;) course)
+- Learn how to write code that "catches" exceptions eg LogP "throws an exception" if wrong SMILES
 
 #### Day 4:
 Awake at 5am thinking about this, so
