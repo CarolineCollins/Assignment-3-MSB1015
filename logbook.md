@@ -33,4 +33,10 @@ I try the same code as yesterday, but get the error message
 My user name is caroliine, I had forgotten that. (the command whoami will remind me next time!)
 It seems this is my home directory (probably you return there at every restart(?)). (home directory is AKA ~)
 Need to spend some time doing command line tutorials, it seems.
-Feeling more happy after some time spent on the tutorial.
+Feeling more happy after some time spent on the tutorial. ~ / relative and absolute paths clearer now
+
+#### Day 3:
+Network Biology - at work on the other (parallel - ;) course)
+
+#### Day 4:
+Awake at 5am thinking about this, so... 
