@@ -20,6 +20,8 @@ Why yet another workflow?
 Recent, since 2017. One design decision was not to make it graphical. 
 Information channels link nodes.
 You can see some examples on `openrisknet.org`
+Egon's opinion: one defect of N is that it is hard to see what is going on in background.
+This makes it super-important to document what you think is going on.
 
 #### Day 2:
 after a big Windows update last night, I reopen the Ubuntu app
@@ -54,3 +56,12 @@ Awake at 5am thinking about this, so
  - process is run reactively when input becomes available
  - execution abstraction : means can reuse code unaltered on local, cloud, whatever 
  by simply redefining target execution platform in configuration files
+ - batch schedulers
+ - cloud platforms
+ - Nextflow executors
+ - Java((Groovy(Nextflow))) languages
+  Nextflow can execute any piece of Groovy code or use any library for the JVM platform
+  JVM stands for Java Virtual Machine. a VM easily moves tasks from one physical computer to another.
+ - nextflow.config a file in execution directory in which you define the pipeline configurations
+ - when working in Notepad use UTF-8 character encoding
+ - 
