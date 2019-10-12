@@ -40,12 +40,14 @@ Network Biology - at work on the other (parallel - ;) course)
 
 #### Day 4:
 Awake at 5am thinking about this, so
-"? * con*cat*enate > >> less q . rm -i   seems like a good option to avoid catastrophic accidental deletions. "
-"man thing                 for looking commands up in the manual"
- "|  pipes"
- "dangers of su and sudo"
+##### Useful commands
+- "? * con*cat*enate > >> less q ."
+- rm -i   seems like a good option to avoid catastrophic accidental deletions. 
+- "man thing                 for looking commands up in the manual"
+- "|  pipes"
+- dangers of su and sudo
  That was a pretty successful tutorial because now I can move about in my files and directories and run 
- the simple.nf code pulled from this github repo.
+ the simple.nf code pulled from this github repo. (also look knowledgeable in front of my 13 yo son!)
  ##### Nextflow documentation
  - input and output clearly defined in processes
  - communication channels
