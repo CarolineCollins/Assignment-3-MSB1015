@@ -43,3 +43,5 @@ Awake at 5am thinking about this, so...
 ? * con*cat*enate
 > >> less q
 rm -i   seems like a good option to avoid catastrophic accidental deletions
+man thing                 for looking commands up in the manual
+ |  pipes
