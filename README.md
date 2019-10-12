@@ -6,6 +6,8 @@ Here on the README note the results of a comparison of computation times on diff
 ### What can you find in this repository?
 
 ### How to make it run?
+#### Input
+#### Output
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
