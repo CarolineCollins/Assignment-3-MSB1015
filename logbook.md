@@ -39,12 +39,16 @@ Feeling more happy after some time spent on the tutorial. ~ / relative and absol
 Network Biology - at work on the other (parallel - ;) course)
 
 #### Day 4:
-Awake at 5am thinking about this, so... 
-"? * con*cat*enate
-> >> less q
-rm -i   seems like a good option to avoid catastrophic accidental deletions
-man thing                 for looking commands up in the manual
- |  pipes
- dangers of su and sudo"
+Awake at 5am thinking about this, so
+"? * con*cat*enate > >> less q . rm -i   seems like a good option to avoid catastrophic accidental deletions. "
+"man thing                 for looking commands up in the manual"
+ "|  pipes"
+ "dangers of su and sudo"
  That was a pretty successful tutorial because now I can move about in my files and directories and run 
  the simple.nf code pulled from this github repo.
+ ##### Nextflow documentation
+ - input and output clearly defined in processes
+ - communication channels
+ - process is run reactively when input becomes available
+ - execution abstraction : means can reuse code unaltered on local, cloud, whatever 
+ by simply redefining target execution platform in configuration files
