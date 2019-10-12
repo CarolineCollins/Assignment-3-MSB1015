@@ -22,6 +22,7 @@ If you want to make the calculation for a different set of molecules change ...
 - Nextflow `https://www.nextflow.io/docs/latest/basic.html`
 - Ubuntu and the command line `https://tutorials.ubuntu.com/tutorial/command-line-for-beginners#0`
 - Markdown `https://www.markdownguide.org/basic-syntax`
+- Docker `https://docs.docker.com/get-started/`
 
 ### References
 - Plante J, Werner S. JPlogP: an improved logP predictor trained using predicted data. Journal of Cheminformatics. 2018;10(1):61.
