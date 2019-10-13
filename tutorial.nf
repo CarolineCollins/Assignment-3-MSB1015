@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow                     //shebang line tells the shell that you are speaking Nextflow
 
-params.str = 'Hello world!'                    //define a variable '' it's a string
+params.str = 'HELLO WORLD!'                    //define a variable '' it's a string
 
 process splitLetters {                             //nice descriptive process name
 
@@ -13,7 +13,7 @@ process splitLetters {                             //nice descriptive process na
 }
 //multiline string speaks in bash pipes, print not visible
 
-process convertToUpper {                                   //nice descriptive process name
+process convertToLower {                                   //nice descriptive process name
 
     input:
     file x from letters                                     //it seems that letters is a channel was output from splitLetters
@@ -22,7 +22,7 @@ process convertToUpper {                                   //nice descriptive pr
     stdout result                                     //standard output is the default file descriptor designated as "result"
 
     """
-    cat $x | tr '[a-z]' '[Z-A]'                                  
+    cat $x | tr '[A-Z]' '[a-z]'                                  
     """                                                            
 }
 //concatenate the variable x and pipe it to translate
