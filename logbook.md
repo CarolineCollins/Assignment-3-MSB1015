@@ -116,4 +116,12 @@ Awake at 5am thinking about this, so
   JVM stands for Java Virtual Machine. a VM easily moves tasks from one physical computer to another.
  - nextflow.config a file in execution directory in which you define the pipeline configurations
  - when working in Notepad use UTF-8 character encoding
- - 
+ 
+ #### Day 5 
+ Playing with simple.nf, commenting and deciphering the code
+ Finding alterbative ways to write the same thing
+ Then noticed that different runs of simple.nf were returning different answers.
+ Sometimes prints 4 strings (of 5)
+ Sometimes prints 2 strings or only 1!
+ Def a bug not a feature of parallel programming.
+ What is not working here?
