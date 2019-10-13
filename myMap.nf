@@ -8,7 +8,7 @@ Channel
 
 process foo {
 input: 
- zoo
+ it from zoo
 exec: 
   println "Animal ${it}" 
 //output:
