@@ -8,11 +8,11 @@ Channel
 
 process foo {
 input: 
- it from zoo
+  set animal from zoo
 exec: 
-  println "Animal ${it}" 
+  println "Animal ${animal}" 
 //output:
  // """
- // echo ${zoo}
+ // echo ${animal}
  // """
 }
