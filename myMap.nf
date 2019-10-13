@@ -6,7 +6,7 @@ Channel
 
 
 
-process foo {
+process get_the_animals_from_the_zoo {
 input: 
   set animal from zoo
 exec: 
