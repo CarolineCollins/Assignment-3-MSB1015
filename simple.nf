@@ -2,7 +2,10 @@
 
 Channel
     .fromPath("./short.tsv")                            //tab separated values file has the data
-    .set { rawdata_ch }                                   //look at the data side by side for bugfix
+    .set { rawdata_ch }                                   //intend to look at the data side by side for bugfix
+
+Channel
+    .fromPath("./short.tsv")                            //tab separated values file has the data
     .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') //split the tsv by tab and set up column names
     .map{ row -> tuple(row["wikidata"], row["smiles"]) }      //creates a map (AKA associative array) of ordered pairs
     .set { molecules_ch }                               //_ch designates that as a channel
