@@ -125,3 +125,18 @@ Awake at 5am thinking about this, so
  Sometimes prints 2 strings or only 1!
  Def a bug not a feature of parallel programming.
  What is not working here?
+ ##### Playing with Nextflow tutorial
+ It is quite funny to sometimes get world Hello! instead of Hello world!
+ Launching `tutorial.nf` [fabulous_blackwell] - revision: 565bdfd565
+executor >  local (3)
+[c5/0cafad] process > splitLetters       [100%] 1 of 1 ✔
+[2a/cdb6d3] process > convertToLower (1) [100%] 2 of 2 ✔
+world!
+hello
+------
+Launching `tutorial.nf` [agitated_mcclintock] - revision: 565bdfd565
+executor >  local (3)
+[31/f04c9a] process > splitLetters       [100%] 1 of 1 ✔
+[6a/4f00d9] process > convertToLower (1) [100%] 2 of 2 ✔
+hello
+world!
