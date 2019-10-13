@@ -8,7 +8,14 @@
 
 //println result
 //==============
+//split this into Channel and Process
 
-['Cat', 'Dog', 'Elephant'].eachWithIndex { animalName, index ->
-    println "${index}. Animal ${animalName}"
+zoo = Channel.value(['Cat', 'Dog', 'Elephant'].eachWithIndex )
+
+
+process foo {
+input: 
+  val animalName, index from zoo
+exec: 
+  println "${index}. Animal ${animalName}" 
 }
