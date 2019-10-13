@@ -8,7 +8,10 @@
 
 //println result
 //==============
-//split this into Channel and Process
+//split this into Channel and Process 
+//don't forget the shebang command
+
+#!/usr/bin/env nextflow
 
 Channel
   .from('Cat', 'Dog', 'Elephant')
