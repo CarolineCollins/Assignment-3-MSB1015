@@ -22,7 +22,7 @@ process convertToUpper {                                   //nice descriptive pr
     stdout result                                     //standard output is the default file descriptor designated as "result"
 
     """
-    cat $x | tr '[a-z]' '[1-26]'                                  
+    cat $x | tr '[a-z]' '[Z-A]'                                  
     """                                                            
 }
 //concatenate the variable x and pipe it to translate
