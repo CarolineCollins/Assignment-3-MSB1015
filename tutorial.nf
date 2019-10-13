@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow                     //shebang line tells the shell that you are speaking Nextflow
 
-params.str = 'HELLO WORLD!'                    //define a variable '' it's a string
+params.str = 'HELLO HOW ARE YOU WORLD MY NAME IS WILLY!'                    //define a variable '' it's a string
 
 process splitLetters {                             //nice descriptive process name
 
