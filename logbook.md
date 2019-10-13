@@ -140,4 +140,10 @@ executor >  local (3)
 [31/f04c9a] process > splitLetters       [100%] 1 of 1 ✔
 [6a/4f00d9] process > convertToLower (1) [100%] 2 of 2 ✔
 hello
-world!"
+world!"  
+
+ The it identifier is an implicit variable that represents the value that is passed to the function when it is invoked.
+ run -resume   cached
+ pipeline parameters  params.thing that can be overridden on the command line with --thing   double dash
+ {} a closure defines a block of code that can then be passed around as if it were a string or an integer
+ can have an anonymous closure ie just defined in the moment when needed
