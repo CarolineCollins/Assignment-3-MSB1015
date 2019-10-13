@@ -2,9 +2,18 @@
 
 Channel
     .fromPath("./short.tsv")                            //tab separated values file has the data
+    .set { rawdata_ch }                                   //look at the data side by side for bugfix
     .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') //split the tsv by tab and set up column names
     .map{ row -> tuple(row["wikidata"], row["smiles"]) }      //creates a map (AKA associative array) of ordered pairs
     .set { molecules_ch }                               //_ch designates that as a channel
+  
+process print_rawdata {
+    input:
+    set rawdata from rawdata_ch
+    
+    exec:
+        print "${rawdata}
+}
 
 process printSMILES {                                   //this node just has input-exec, rather than input-output
     input:
