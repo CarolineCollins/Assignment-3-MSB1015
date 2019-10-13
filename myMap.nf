@@ -16,6 +16,10 @@ zoo = Channel.value(['Cat', 'Dog', 'Elephant'])
 process foo {
 input: 
   val animalName from zoo
-exec: 
-  println "Animal ${animalName}" 
+//exec: 
+//  println "Animal ${animalName}" 
+output:
+  """
+  echo $animalName 
+  """
 }
