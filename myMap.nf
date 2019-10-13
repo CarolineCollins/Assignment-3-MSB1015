@@ -10,12 +10,13 @@
 //==============
 //split this into Channel and Process
 
-zoo = Channel.value(['Cat', 'Dog', 'Elephant'])
+zoo = Channel.from('Cat', 'Dog', 'Elephant')
+
 
 
 process foo {
 input: 
-  val animalName from zoo
+  animalName from zoo
 //exec: 
 //  println "Animal ${animalName}" 
 output:
