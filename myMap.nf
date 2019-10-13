@@ -17,5 +17,5 @@ process foo {
 input: 
   val animalName from zoo
 exec: 
-  println "${index}. Animal ${animalName}" 
+  println "Animal ${animalName}" 
 }
