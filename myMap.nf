@@ -10,7 +10,9 @@
 //==============
 //split this into Channel and Process
 
-zoo = Channel.from('Cat', 'Dog', 'Elephant')
+Channel
+  .from('Cat', 'Dog', 'Elephant')
+  .set{ zoo }
 
 
 
