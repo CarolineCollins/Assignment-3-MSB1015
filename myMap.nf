@@ -8,9 +8,9 @@ Channel
 
 process foo {
 input: 
-  animalName from zoo
+ zoo
 //exec: 
-//  println "Animal ${animalName}" 
+//  println "Animal ${it}" 
 output:
   """
   echo $animalName 
