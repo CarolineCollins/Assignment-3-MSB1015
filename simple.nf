@@ -15,7 +15,7 @@ process print_rawdata {
     set rawdata from rawdata_ch
     
     exec:
-        print "${rawdata}"
+        println "${rawdata}"
 }
 
 process printSMILES {                                   //this node just has input-exec, rather than input-output
