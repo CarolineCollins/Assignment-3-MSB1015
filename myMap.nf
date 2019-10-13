@@ -13,6 +13,6 @@ input:
 //  println "Animal ${it}" 
 output:
   """
-  echo $it
+  echo $zoo
   """
 }
