@@ -10,12 +10,12 @@
 //==============
 //split this into Channel and Process
 
-zoo = Channel.value(['Cat', 'Dog', 'Elephant'].eachWithIndex )
+zoo = Channel.value(['Cat', 'Dog', 'Elephant'])
 
 
 process foo {
 input: 
-  val animalName, index from zoo
+  val animalName from zoo
 exec: 
   println "${index}. Animal ${animalName}" 
 }
