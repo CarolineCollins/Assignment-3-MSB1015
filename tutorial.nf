@@ -6,12 +6,12 @@ process splitLetters {                             //nice descriptive process na
 
     output:
     file 'chunk_*' into letters mode flatten           //this is upsetting, where is the "input: " I expect?
-                                                      //flatten means get rid of any nesting
+                                                      //flatten means get rid of any nesting keeps integrity of words
     """
     printf '${params.str}' | split -b 6 - chunk_        
     """
 }
-//multiline string speaks in bash pipes, print not visible
+//multiline string speaks in bash pipes, print not visible - how does it keep words together yet split string into 6 parts?
 
 process convertToLower {                                   //nice descriptive process name
 
@@ -22,9 +22,9 @@ process convertToLower {                                   //nice descriptive pr
     stdout result                                     //standard output is the default file descriptor designated as "result"
 
     """
-    cat $x | tr '[A-Z]' '[a-z]'                                  
+    rev $x                                   
     """                                                            
 }
-//concatenate the variable x and pipe it to translate
- //direct map from little to big letters
+//reverses  
+
 result.println { it.trim() }                                    //print is outside the process!
