@@ -9,10 +9,10 @@ Channel
 process foo {
 input: 
  zoo
-//exec: 
-//  println "Animal ${it}" 
-output:
-  """
-  echo ${zoo}
-  """
+exec: 
+  println "Animal ${it}" 
+//output:
+ // """
+ // echo ${zoo}
+ // """
 }
