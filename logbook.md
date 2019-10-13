@@ -133,8 +133,7 @@ executor >  local (3)
 [c5/0cafad] process > splitLetters       [100%] 1 of 1 ✔
 [2a/cdb6d3] process > convertToLower (1) [100%] 2 of 2 ✔
 world!
-hello
-------"
+hello"  
 
 "Launching `tutorial.nf` [agitated_mcclintock] - revision: 565bdfd565
 executor >  local (3)
