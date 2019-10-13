@@ -118,8 +118,8 @@ Awake at 5am thinking about this, so
  - when working in Notepad use UTF-8 character encoding
  
  #### Day 5 
- Playing with simple.nf, commenting and deciphering the code
- Finding alterbative ways to write the same thing
+ "Playing with simple.nf, commenting and deciphering the code
+ Finding alternative ways to write the same thing
  Then noticed that different runs of simple.nf were returning different answers.
  Sometimes prints 4 strings (of 5)
  Sometimes prints 2 strings or only 1!
@@ -133,10 +133,10 @@ executor >  local (3)
 [2a/cdb6d3] process > convertToLower (1) [100%] 2 of 2 ✔
 world!
 hello
-------
-Launching `tutorial.nf` [agitated_mcclintock] - revision: 565bdfd565
+------"
+"Launching `tutorial.nf` [agitated_mcclintock] - revision: 565bdfd565
 executor >  local (3)
 [31/f04c9a] process > splitLetters       [100%] 1 of 1 ✔
 [6a/4f00d9] process > convertToLower (1) [100%] 2 of 2 ✔
 hello
-world!
+world!"
