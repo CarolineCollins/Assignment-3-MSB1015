@@ -24,7 +24,8 @@ process checkSMILES {
     """
     #!/usr/bin/env groovy
     @Grab(group='net.bioclipse.bacting', module='managers-cdk', version='0.0.3')
-    def cdk = net.bioclipse.managers.CDKManager(".");
+    workspaceRoot = "."
+    def cdk = new net.bioclipse.managers.CDKManager(workspaceRoot);
     new File('${x}').readLines().each {
       def fields = it.split()
       try {
