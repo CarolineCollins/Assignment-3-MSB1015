@@ -1,5 +1,7 @@
 #!/usr/bin/env nextflow
 
+myFile = ('/home/caroliine/tmp/Assignment-3-MSB1015//my_file.file')
+
 Channel
   .from('Lion', 'Tiger', 'Elephant')
   .set{ zoo }
