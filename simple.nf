@@ -1,8 +1,7 @@
 #!/usr/bin/env nextflow
 
-Channel
-    .fromPath("./short.tsv")                            //tab separated values file has the data
-    .set { rawdata_ch }                                   //intend to look at the data side by side for bugfix
+
+
 
 Channel
     .fromPath("./short.tsv")                            //tab separated values file has the data
@@ -11,13 +10,6 @@ Channel
     .buffer( size: 50000, remainder: true)                 //slow down the process
     .set { molecules_ch }                               //_ch designates that as a channel
   
-process print_rawdata {
-    input:
-    set rawdata from rawdata_ch
-    
-    exec:
-        println "${rawdata}"
-}
 
 process printSMILES {                                   //this node just has input-exec, rather than input-output
     input:
