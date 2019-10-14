@@ -13,8 +13,9 @@ input:
   set animal from zoo
 output: 
   myFile.text = "Animal ${animal}" 
+}
 //output:
  // """
  // echo ${animal}
  // """
-}
+
