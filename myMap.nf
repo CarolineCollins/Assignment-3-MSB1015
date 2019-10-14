@@ -12,10 +12,10 @@ process get_the_animals_from_the_zoo {
 input: 
   set animal from zoo
 output: 
-  myFile.text = "Animal ${animal}" 
-}
-//output:
- // """
- // echo ${animal}
- // """
+  file 'myFile.txt' into "Animal ${animal}" 
 
+
+ """
+ echo myFile.txt
+ """
+}
