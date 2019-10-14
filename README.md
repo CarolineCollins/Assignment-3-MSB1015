@@ -1,7 +1,7 @@
 # Assignment-3-MSB1015
 ### Synopsis
 A project to learn how to use Nextflow, SPARQL query, and CDK to calculate JPlogP on all the molecules in WikiData.
-Here on the README note the results of a comparison of computation times *for retrieving SMILES from WikiData, parsing the SMILES and calculating the JPlogP value* on different numbers of threads.
+Here on the README note the results of a comparison of computation times *parsing the SMILES and getting the JPlogP value* on different numbers of threads.
 
 ### What can you find in this repository?
 
