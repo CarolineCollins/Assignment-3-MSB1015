@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-params.str = file("./data.tsv")
+params.str = file("./short.tsv")
 params.size = 5000
 
 process splitWikidata {
