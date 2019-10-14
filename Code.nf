@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow                 //shebang tells shell we are going to be speaking Nextflow from now on
 
 /* Input a query text 
-*  Output min, max and median of 159,000 JPlogP values and a time
+*  Output min, max and median of 159,000 JPlogP values and a timing*/
 
 // Process 0 change the number of threads used
 //     input maybe a command line parameter overwrite with the double dash? params.query?
@@ -17,12 +17,13 @@
 //  use getJPlogP and checkJPlogP ?
 //    output molecules, SMILES, JPlogP  , start time, end time  
 
-// Process 3 time 
+// Process 3 timing
 //     input start time of process 2 and end time of process 2
-//     output difference  
+//     take difference  = timing
+//     output timing
 
 // Process 4 make a text table
-//     input difference, number of threads
+//     input timing, number of threads
 //     output save a .csv file maybe so that I can display it on the Readme
 
 // Process 5 find min max and median of all JPlogPs (use R? or Math.*)
