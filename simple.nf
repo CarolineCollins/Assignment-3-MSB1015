@@ -17,8 +17,12 @@ Channel
 
 process printSMILES {                                   
     input:
-    set wikidata, smiles from molecules_ch              
-
+    set wikidata, smiles from molecules_ch     
+    
+    errorStrategy = 'retry'
+    maxRetries = 2
+    maxErrors = 10
+    
     exec:
       println "${wikidata} has SMILES: ${smiles}"       
 }
