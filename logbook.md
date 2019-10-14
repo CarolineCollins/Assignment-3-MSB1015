@@ -158,8 +158,8 @@ world!"
  and uses "</p>" html type formatting.
  - Make a list of questions (user interface, cdk book and groovy, 
  buffer, pseudocode) for Martina and Egon that will help us to move forward.
- - Trialled running simple with the buffering line inserted but that creates error 'tuples'
- - Trialled maxForks = 1
+ - Trialled running simple with the buffering line inserted but that creates error 'tuples'* see below
+ - Trialled maxForks = 1 - this seems to work without error but doesn't affect timing much
  - Trialled using "time" and "date" on the runs of simple  
  
 $ time ./nextflow run simple.nf gives  
@@ -173,4 +173,11 @@ $ date; ./nextflow run simple.nf; date
 Mon Oct 14 15:18:45 CEST 2019
 stuff
 Mon Oct 14 15:18:48 CEST 2019
- 
+- buffer tuples error
+N E X T F L O W  ~  version 19.07.0
+Launching `simple.nf` [amazing_mclean] - revision: 229fd47a88
+[-        ] process > printSMILES -
+WARN: Input tuple does not match input set cardinality declared by process `printSMILES` -- offending value: [[<http://www.wikidata.org/entity/Q27145494>, CC1=C(C=CC(=C1)Cl)OC(C)C(=O)O], [<http://www.wikidata.org/entity/Q161656>, CC1=CC=CC2=CC=CC=C12  ], [<http://www.wikidata.org/entity/Q169326>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q27216081>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q
+executor >  local (1)
+[52/32869d] process > printSMILES (1) [100%] 1 of 1 ✔
+WARN: Input tuple does not match input set cardinality declared by process `printSMILES` -- offending value: [[<http://www.wikidata.org/entity/Q27145494>, CC1=C(C=CC(=C1)Cl)OC(C)C(=O)O], [<http://www.wikidata.org/entity/Q161656>, CC1=CC=CC2=CC=CC=C12  ], [<http://www.wikidata.org/entity/Q169326>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q27216081>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q168790>, CC1CCCC=CC2CC(CC2C(C=CC(=O)O1)O)O]]
