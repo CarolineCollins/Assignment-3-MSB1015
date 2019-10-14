@@ -7,7 +7,7 @@ Channel
     .fromPath("./short.tsv")                            //tab separated values file has the data
     .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') //split the tsv by tab and set up column names
     .map{ row -> tuple(row["wikidata"], row["smiles"]) }      //creates a map (AKA associative array) of ordered pairs
-    .buffer( size: 50000, remainder: true)                 //slow down the process
+    // .buffer( size: 50000, remainder: true)                 slow down the process
     .set { molecules_ch }                               //_ch designates that as a channel
   
 
