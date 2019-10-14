@@ -22,7 +22,7 @@ output:
 
 result.println { it.text }
 
-/* 
+/**
  * The `subscribe` operator is triggered when the `result`
  * emits the output produced by the above process, printing 
  * the blast result
@@ -31,7 +31,7 @@ result.println { it.text }
 
 
 
-/*
+/**
  *.
  * The output is sent over the `result` channel 
  */

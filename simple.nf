@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-/* tab separated values file has the data - split the tsv by tab and set up column names
+/** tab separated values file has the data - split the tsv by tab and set up column names
 * creates a map (AKA associative array) of ordered pairs - buffer slows the process down for testing purposes
 * set designates - that variable will be the channel */
 
@@ -12,7 +12,7 @@ Channel
     // .buffer( size: 50000, remainder: true)                
     .set { molecules_ch }                               
   
-/* this node just has input-exec, rather than input-output
+/** this node just has input-exec, rather than input-output
 * input from the channel is designated */
 
 process printSMILES {                                   
@@ -27,10 +27,10 @@ process printSMILES {
       println "${wikidata} has SMILES: ${smiles}"       
 }
 
-/*print with a new line at the end of each string. $ ensures the {} is treated as a string
+/** print with a new line at the end of each string. $ ensures the {} is treated as a string
 * two alternative ways to define a map : println scores["Pete"] or println scores.Pete */
 
-/* process calculateJPlogP {
+/** process calculateJPlogP {
 *    input:
 *   
 *    
