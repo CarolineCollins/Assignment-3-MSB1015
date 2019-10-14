@@ -23,7 +23,7 @@ process checkSMILES {
   script:
     """
     #!/usr/bin/env groovy
-    @Grab(group='net.bioclipse.bacting', module='managers-cdk', version='0.0.3')
+    @Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
     workspaceRoot = "."
     def cdk = new net.bioclipse.managers.CDKManager(workspaceRoot);
     new File('${x}').readLines().each {
@@ -32,7 +32,7 @@ process checkSMILES {
         // println "x: " + fields[1]
         cdk.fromSMILES(fields[1])
       } catch (Exception exc) {
-        println fields[0] + ": " + exc.message
+        println "Error in " + fields[0] + ": " + exc.message
       }
     }
     """
