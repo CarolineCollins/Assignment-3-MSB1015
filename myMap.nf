@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
 
-myFile.txt = ('/home/caroliine/tmp/Assignment-3-MSB1015//my_file.file')
+myFile = ('/home/caroliine/tmp/Assignment-3-MSB1015/myFile.file')
 
 Channel
   .from('Lion', 'Tiger', 'Elephant')
