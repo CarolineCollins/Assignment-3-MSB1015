@@ -11,7 +11,7 @@ Channel
 process get_the_animals_from_the_zoo {
 input: 
   set animal from zoo
-exec: 
+output: 
   myFile.text = "Animal ${animal}" 
 //output:
  // """
