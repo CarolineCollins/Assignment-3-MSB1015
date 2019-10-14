@@ -22,6 +22,7 @@ process printSMILES {
     errorStrategy = 'retry'
     maxRetries = 2
     maxErrors = 10
+    maxForks 1
     
     exec:
       println "${wikidata} has SMILES: ${smiles}"       
