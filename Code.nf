@@ -1,4 +1,4 @@
-#!/usr/bin/env nextflow                 //shebang tells shell we are going to be speaking Nextflow from now on
+#!/usr/bin/env nextflow             //shebang tells shell we are going to be speaking Nextflow from now on
 
 /* Input a query text 
 *  Output min, max and median of 159,000 JPlogP values and a time
