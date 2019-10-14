@@ -18,14 +18,17 @@ Channel
 process printSMILES {                                   
     input:
     set wikidata, smiles from molecules_ch     
-    
-    errorStrategy = 'retry'
-    maxRetries = 2
-    maxErrors = 10
     maxForks 1
+    output:
+      val results into output_ch
+   
     
     exec:
-      println "${wikidata} has SMILES: ${smiles}"       
+      results = "${wikidata} has SMILES: ${smiles}"     
+}
+
+output_ch.subscribe {
+  println "Output line: " + it
 }
 
 /** print with a new line at the end of each string. $ ensures the {} is treated as a string
