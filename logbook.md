@@ -147,3 +147,30 @@ world!"
  pipeline parameters  params.thing that can be overridden on the command line with --thing   double dash
  {} a closure defines a block of code that can then be passed around as if it were a string or an integer
  can have an anonymous closure ie just defined in the moment when needed
+ 
+ #### Day 6 
+ ##### Lecture and Skills w Martina
+ - Possible that terminal cannot print out all 5 even on successful process
+ retry magic fix does not fix
+ sometimes process NOT successful
+ unsuccessfully attempt include code to write to file to overcome this.
+ - Possible that it is required to use JavaDoc style commenting, which involves @link, @author, @param
+ and uses "</p>" html type formatting.
+ - Make a list of questions (user interface, cdk book and groovy, 
+ buffer, pseudocode) for Martina and Egon that will help us to move forward.
+ - Trialled running simple with the buffering line inserted but that creates error 'tuples'
+ - Trialled maxForks = 1
+ - Trialled using "time" and "date" on the runs of simple  
+ 
+$ time ./nextflow run simple.nf gives  
+
+stuff
+real    0m3.825s
+user    0m10.172s
+sys     0m1.203s
+$ date; ./nextflow run simple.nf; date  
+
+Mon Oct 14 15:18:45 CEST 2019
+stuff
+Mon Oct 14 15:18:48 CEST 2019
+ 
