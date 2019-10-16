@@ -181,3 +181,17 @@ WARN: Input tuple does not match input set cardinality declared by process `prin
 executor >  local (1)
 [52/32869d] process > printSMILES (1) [100%] 1 of 1 ✔
 WARN: Input tuple does not match input set cardinality declared by process `printSMILES` -- offending value: [[<http://www.wikidata.org/entity/Q27145494>, CC1=C(C=CC(=C1)Cl)OC(C)C(=O)O], [<http://www.wikidata.org/entity/Q161656>, CC1=CC=CC2=CC=CC=C12  ], [<http://www.wikidata.org/entity/Q169326>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q27216081>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q168790>, CC1CCCC=CC2CC(CC2C(C=CC(=O)O1)O)O]]
+
+#### Day 10 
+The partition coefficient describes how a molecular structure distributes itself over two immiscible solvents. 
+The logarithm of the partition coefficient (LogP) between octanol and water 
+is often used in cheminformatics to describe hydrophobicity.
+Wikipedia gives this equation. 
+This equation assumes that the solute is neutral, which may involve changing the pH of the water.
+
+The CDK has implemented an algorithm based on the XLogP algorithm. 
+The code is available via the descriptor API. 
+It can be used to calculate the LogP for a single molecule. 
+The implementation expects explicit hydrogens, 
+so you need to add those if not present yet (see Section 14.4). 
+The calculation returns a DoubleResult following the descriptor API:
