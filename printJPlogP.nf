@@ -56,10 +56,10 @@ process writeFile {
   input:
 	output_ch
   output:
-  	Test
+  	myFile
     
   exec: 
-  	Test.text = "molecule \t JPlogP \t"
-	Test.append(output_ch)
+  	myFile.text = "molecule \t JPlogP \t"
+	myFile.append(output_ch)
 }
 
