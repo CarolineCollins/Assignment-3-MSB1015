@@ -5,6 +5,11 @@
 * set designates - that variable will be the channel 
 */
 
+@Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
+@Grab(group='org.openscience.cdk', module='cdk-qsarmolecular', version='2.3')
+import net.bioclipse.managers.CDKManager
+import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor
+import org.openscience.cdk.interfaces.IAtomContainer
 
 Channel
     .fromPath("./short.tsv")                            
@@ -25,7 +30,17 @@ process printSMILES {
       val results into output_ch
       
     exec:
-      results = "${wikidata} has SMILES: ${smiles}"    
+	println "Running.."   //as recommended by Ammar
+	cdk = new CDKmanager(".");
+	try {
+	  molecule = cdk.fromSMILES(smiles)
+	  descriptor = new JPlogPDescriptor()
+          jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
+	  // println "JPLogP : " + jplogp
+	} catch (Exception exc) {
+	  println "Error in parsing this SMILE $smiles"
+	}
+      results = "${wikidata} has JPlogP: ${jplogp}"    
       
 }
 
