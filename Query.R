@@ -12,6 +12,12 @@
 # Note : 
 # As a prerequisite, this code needs a certain Wikidata query R package 
 # which you can find here: https://github.com/bearloga/WikidataQueryServiceR
+#===============================================
+# STEP 0 Define your main directory/directories:
+#===============================================
+working_directory <- getwd()
+DATA.DIR <- working_directory
+RESULTS.DIR <- working_directory     #change this if you want
 #===================================================
 # INSTALL required library
 #====================================================
