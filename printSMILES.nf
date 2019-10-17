@@ -8,11 +8,6 @@ import net.bioclipse.managers.CDKManager
 import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor
 import org.openscience.cdk.interfaces.IAtomContainer
 
-/** a tab separated values file contains the data 
-* we split the tsv by tab and set up column names
-* creates a map (AKA associative array) of ordered pairs 
-* set designates - that variable name ( the channel) 
-*/
 
 Channel
     .fromPath("./short.tsv")                            
@@ -33,7 +28,7 @@ process printSMILES {
       val results into output_ch
       
     exec:
-	println "Running.."   //as recommended by Ammar
+	println "Running.."   
 	cdk = new CDKmanager(".");
 	try {
 	  molecule = cdk.fromSMILES(smiles)
