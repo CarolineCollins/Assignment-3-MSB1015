@@ -17,7 +17,7 @@
 #===============================================
 working_directory <- getwd()
 DATA.DIR <- working_directory
-RESULTS.DIR <- working_directory     #change this if you want
+RESULTS.DIR <- working_directory     #change this to suit your working method
 #===================================================
 # INSTALL required library
 #====================================================
