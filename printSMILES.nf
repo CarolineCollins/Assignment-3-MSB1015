@@ -23,11 +23,12 @@ process printSMILES {
     set wikidata, smiles from molecules_ch     
     maxForks 1
        
+    output:
+      val results into output_ch
+      
     exec:
       results = "${wikidata} has SMILES: ${smiles}"    
       
-    output:
-      val results into output_ch
 }
 
 output_ch.subscribe {
