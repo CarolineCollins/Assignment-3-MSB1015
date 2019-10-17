@@ -1,5 +1,39 @@
 #!/usr/bin/env nextflow             //shebang tells shell we are going to be speaking Nextflow from now on
 
+// import statements
+
+/**
+ * @author      Caroline Collins 
+ * @version     1.0             
+ */
+public class Code {
+    // class body
+}
+/**
+ * Calculate JPlogP values for a list of molecules.                          
+ * <p>
+ * Optional longer description.   
+ * here.
+ * </p>
+ * More explanations 
+ * paragraphs separated by HTML paragraph breaks.
+ *
+ * @param  variable Description cores query text text text.         
+ * @return Description a.tsv file containing molecule IDs and their JPlogP values.
+ */
+public int methodName (...) {
+    // method body with a return statement
+}
+/**
+ * The horizontal distances of point.
+ */
+public int x;
+
+/**
+ * The vertical distances of point.
+ */
+public int y;
+
 /** Input a query text 
 *  Output min, max and median of 159,000 JPlogP values and a timing*/
 
