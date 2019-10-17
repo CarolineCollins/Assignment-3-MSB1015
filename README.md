@@ -25,7 +25,7 @@ for *parsing the SMILES and getting their JPlogP values*.
 #### How to adapt the code for reuse
 If you want to make the calculation for a different set of molecules, then 
 change the text of the query within the R code as detailed in the code comments.
-The query given in this code is as follows (SPARQL query syntax):
+The query given in this code is as follows (SPARQL query syntax):  
 **SELECT DISTINCT ?compound ?smiles ?isoSmiles WHERE {  
   ?compound wdt:P233 | wdt:P2017 [] .  
   OPTIONAL { ?compound wdt:P233 ?smiles }  
