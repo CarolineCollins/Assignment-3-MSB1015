@@ -26,11 +26,12 @@ for *parsing the SMILES and getting their JPlogP values*.
 If you want to make the calculation for a different set of molecules, then 
 change the text of the query within the R code as detailed in the code comments.
 The query given in this code is as follows (SPARQL query syntax):
-**SELECT DISTINCT ?compound ?smiles ?isoSmiles WHERE {
-  ?compound wdt:P233 | wdt:P2017 [] .
-  OPTIONAL { ?compound wdt:P233 ?smiles }
-  OPTIONAL { ?compound wdt:P2017 ?isoSmiles }
-}**
+**SELECT DISTINCT ?compound ?smiles ?isoSmiles WHERE {  
+  ?compound wdt:P233 | wdt:P2017 [] .  
+  OPTIONAL { ?compound wdt:P233 ?smiles }  
+  OPTIONAL { ?compound wdt:P2017 ?isoSmiles }  
+  }**  
+  which indiscriminately returns everything from Wikidata having an (iso)SMILES. 
 #### Understanding Nextflow
 [Nextflow](https://www.nature.com/articles/nbt.3820) is a domain-specific language (DSL) that enables pipelines 
 with operations that can be written in any scripting language.
