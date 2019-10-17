@@ -20,7 +20,6 @@ Channel
 process printSMILES {                                   
     input:
     set wikidata, smiles from molecules_ch     
-    maxForks 1
        
     output:
       val results into output_ch
