@@ -34,7 +34,8 @@ process printSMILES {
 	  molecule = cdk.fromSMILES(smiles)
 	  descriptor = new JPlogPDescriptor()
           jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
-	  println "JPLogP : " + jplogp
+	  //println "JPLogP : " + jplogp
+	  myFile.tsv << molecule "\t" + jplogp
 	} catch (Exception exc) {
 	  println "Error in parsing this SMILE $smiles"
 	}
@@ -43,7 +44,7 @@ process printSMILES {
 }
 
 output_ch.subscribe {
-  println "Output line: " + it
+  //println "Output line: " + it
 }
 
 /** print with a new line at the end of each string. $ ensures the {} is treated as a string
