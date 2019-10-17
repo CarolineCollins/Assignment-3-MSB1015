@@ -18,38 +18,26 @@ public class Code {
  * More explanations 
  * paragraphs separated by HTML paragraph breaks.
  *
- * @param  variable Description cores query text text text.         
+ * @param  variable Description cores query text.         
  * @return Description a.tsv file containing molecule IDs and their JPlogP values.
  */
-public int methodName (...) {
-    // method body with a return statement
-}
-/**
- * The horizontal distances of point.
- */
-public int x;
 
-/**
- * The vertical distances of point.
- */
-public int y;
 
-/** Input a query text 
-*  Output min, max and median of 159,000 JPlogP values and a timing*/
-
-// Process 0 change the number of threads used
+// Process 0 change no. of threads  MANUALLY RESTRICT to single fork to prevent parallel computing
 //     input maybe a command line parameter overwrite with the double dash? params.query?
+//     there is a command `cpu 1` or `maxForks 1` 
 //     output number of threads  
 
-// Process 1 query wikidata for molecules and their SMILES 
-//   input query text, 
-// use getSMILES (.rq) and checkSMILES (Groovy)
-//   output molecules, SMILES
+// Process 1 query wikidata for molecules and their SMILES will be done `IN Query.R`  not in nextflow
+//   input query text, // used query from  `getSMILES (.rq)`
+//   query Wikidata using specialised R package
+//   output  `query_result.tsv` molecules, (iso)SMILES in a file
 
-// Process 2 query CDK for JPlogP using the smiles
-//    input molecules , SMILES
-//  use getJPlogP and checkJPlogP ?
-//    output molecules, SMILES, JPlogP  , start time, end time  
+// Process 2b query CDK for JPlogP by parsing the SMILEs will be done in Nextflow
+//    input molecules `query_result.tsv`
+//    import various CDK urls
+//    ensure error handling for missing values, typos
+//    output `JPlogP.tsv` molecules, (iso)SMILES, JPlogP  
 
 // Process 3 timing
 //     input start time of process 2 and end time of process 2
