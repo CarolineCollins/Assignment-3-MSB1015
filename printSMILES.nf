@@ -28,8 +28,8 @@ process printSMILES {
       val results into output_ch
       
     exec:
-	println "Running.."   ;
-	cdk = new CDKmanager(".");
+	println "Running.."   
+	cdk = new CDKManager(".");
 	try {
 	  molecule = cdk.fromSMILES(smiles)
 	  descriptor = new JPlogPDescriptor()
