@@ -59,6 +59,7 @@ process writeFile {
   	Test
     
   exec: 
+  	Test.text = "molecule \t JPlogP \t"
 	Test.append(output_ch)
 }
 
