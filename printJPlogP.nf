@@ -60,6 +60,6 @@ process writeFile {
     
   exec: 
   	myFile.text = "molecule \t JPlogP \t"
-	myFile.append(string)
+	myFile.append({string})
 }
 
