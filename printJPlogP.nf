@@ -35,16 +35,16 @@ process printSMILES {
 	  descriptor = new JPlogPDescriptor()
           jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
 	  //println "JPLogP : " + jplogp
-	  myFile.tsv << ${molecule} + "\t" + ${jplogp}
+	  //myFile.tsv << ${molecule} + "\t" + ${jplogp}
 	} catch (Exception exc) {
 	  println "Error in parsing this SMILE $smiles"
 	}
-      results = "${wikidata} has JPlogP: ${jplogp}"    
+      results = "${wikidata} \t ${jplogp}"    
       
 }
 
 output_ch.subscribe {
-  //println "Output line: " + it
+  println "Output : " + it
 }
 
 /** print with a new line at the end of each string. $ ensures the {} is treated as a string
