@@ -9,8 +9,7 @@
 Channel
     .fromPath("./short.tsv")                            
     .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') 
-    .map{ row -> tuple(row.wikidata, row.smiles) }      
-    .buffer( size: 160000, remainder: true)                
+    .map{ row -> tuple(row.wikidata, row.smiles) }                    
     .set { molecules_ch }                               
   
 /** this node just has input-output- exec, AND .subscribe
