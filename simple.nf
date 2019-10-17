@@ -32,7 +32,8 @@ output_ch.subscribe {
 }
 
 /** print with a new line at the end of each string. $ ensures the {} is treated as a string
-* two alternative ways to define a map : println scores["Pete"] or println scores.Pete */
+* it is an implicit variable
+*/
 
 /** process calculateJPlogP {
 *    input:
