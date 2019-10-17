@@ -149,6 +149,17 @@ world!"
  can have an anonymous closure ie just defined in the moment when needed
  
  #### Day 6 
+ #### Day 7
+ ##### restricting CPUs and parallelising
+ **email** from Egon: 
+ this weekend I played more with the various options that Nextflow offers to control the number of processes,   
+ but found this hard to use this clearly.   
+ Basically, I did not get much beyond "try to use all" and "use only one".  
+ The slides for this week (week 7) have some pointers, regarding my attempts.  
+ The underlying problem may have to do with the fact that the calculation of the parsing of a SMILES and (logP) descriptor  
+ calculation of a single compound is just way too fast, which may be confusing Nextflow in its scheduling.
+ For the assignment, please do look into it, but also *do not worry if you actually do not see the speedup that we would expect*.  
+ Just report what you found. 
  ##### Lecture and Skills w Martina
  - Possible that terminal cannot print out all 5 even on successful process
  retry magic fix does not fix
