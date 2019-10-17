@@ -183,15 +183,78 @@ executor >  local (1)
 WARN: Input tuple does not match input set cardinality declared by process `printSMILES` -- offending value: [[<http://www.wikidata.org/entity/Q27145494>, CC1=C(C=CC(=C1)Cl)OC(C)C(=O)O], [<http://www.wikidata.org/entity/Q161656>, CC1=CC=CC2=CC=CC=C12  ], [<http://www.wikidata.org/entity/Q169326>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q27216081>, CC1CCCC(=O)CCCC=CC2=CC(=CC(=C2C(=O)O1)O)O], [<http://www.wikidata.org/entity/Q168790>, CC1CCCC=CC2CC(CC2C(C=CC(=O)O1)O)O]]
 
 #### Day 10 
-The partition coefficient describes how a molecular structure distributes itself over two immiscible solvents. 
-The logarithm of the partition coefficient (LogP) between octanol and water 
-is often used in cheminformatics to describe hydrophobicity.
-Wikipedia gives this equation. 
-This equation assumes that the solute is neutral, which may involve changing the pH of the water.
+##### clarification of the Assignment task
+Martina replied to class email: 
+###### User interface
+You provide the user with a .nf and .tsv file. 
+The readme should instruct the user on how to run the nextflow script 
+and give detailed information on how you obtained the .tsv file *(including the query)*.
 
-The CDK has implemented an algorithm based on the XLogP algorithm. 
+In your .nf file, you will have a process with multiple steps (you can split it in functions or not – up to you!). 
+The process is the part that will be parallelized.
+For each molecule, the process will be started 
+- parse smiles, 
+- calculate plog, 
+- write result. 
+You will time the complete .nf run (until all molecules are processed).
+
+The output can either be a .tsv file with a logP value for each wikidata entry – calculation of average, median, max, min can then be done in R or Excel afterwards (not part of the parallelization script) or you can try to do it with NextFlow (more difficult since it cannot be done in the same process).
+Rewrite `pseudocode.nf` based on this clarification.
+##### error handling
+Egon sent an email
+"as additional note: it is normal in scientific computing that not all computations go well 
+(bad input, limitations of the algorithms, etc).
+
+*It is how your software handles incorrectly calculated logP's that I find more interesting.* 
+How can the user see which compounds failed (e.g. missing in the output)? 
+How well does your README describe how users can see what works and what does not? 
+Does your code describe what situations are well handled, what not?
+It is your task (think lab notebook), to record your observations, and describe what the user should expect. 
+Clue to possible reasons behind errors:
+Please remember that data is always dirty, and algorithms can be picky... 
+does the logP descriptor work for metals? 
+Do you try to calculate it for metals?
+Egon directs us to a part of the [cdk website](https://egonw.github.io/cdkbook/properties.html#logp)
+The *CDK* has implemented an algorithm based on the *XLogP* algorithm.  
 The code is available via the descriptor API. 
 It can be used to calculate the LogP for a single molecule. 
 The implementation expects explicit hydrogens, 
 so you need to add those if not present yet (see Section 14.4). 
-The calculation returns a DoubleResult following the descriptor API:
+The calculation returns a DoubleResult following the descriptor API
+useful from this: `DoubleResult` and syntax `new`
+But we have been asked to calculate the JPlogP value as opposed to the XLogP.
+##### What is logP in molecules?
+The partition coefficient describes how a molecular structure distributes itself over two immiscible solvents. 
+The logarithm of the partition coefficient (LogP) between octanol and water 
+is often used in cheminformatics to describe hydrophobicity.
+
+#### Day 11
+Toy data set runs to get JPlogP values correctly
+but there are at least two problems with converting this to the big dataset: - I've got a superfluous println in there because the print that outputs the full set of 5 molecules does not include the wikidata ID and so I am too scared to delete one or other, - the full dataset of all molecules has 3 columns instead of 2 : ID, SMILES, isoSMILES
+
+Let's look at the result of running:
+caroliine@DESKTOP-ENJSVUC:~/tmp/Assignment-3-MSB1015$ time ./nextflow run printSMILES.nf
+N E X T F L O W  ~  version 19.07.0
+Launching `printSMILES.nf` [mad_fourier] - revision: 81e9d98c1e
+[-        ] process > printSMILES -
+Running..
+Running..
+Running..
+executor >  local (4)
+[ae/ff4165] process > printSMILES (1) [  0%] 0 of 4
+JPLogP : 3.364195829454932
+JPLogP : 2.797978430439075
+Running..
+JPLogP : 2.742736673289171
+JPLogP : 3.476281307136401
+JPLogP : 3.476281307136401
+Output line: <http://www.wikidata.org/entity/Q161656> has JPlogP: 3.364195829454932
+Output line: <http://www.wikidata.org/entity/Q169326> has JPlogP: 3.476281307136401
+Output line: <http://www.wikidata.org/entity/Q27145494> has JPlogP: 2.797978430439075
+executor >  local (5)
+[30/d56ea2] process > printSMILES (5) [100%] 5 of 5 ✔
+
+
+real    0m7.093s
+user    0m18.844s
+sys     0m2.219s
