@@ -54,12 +54,12 @@ process printJPlogP {
 
 process writeFile {
   input:
-	output_ch
+	set string from output_ch
   output:
   	myFile
     
   exec: 
   	myFile.text = "molecule \t JPlogP \t"
-	myFile.append(output_ch)
+	myFile.append(string)
 }
 
