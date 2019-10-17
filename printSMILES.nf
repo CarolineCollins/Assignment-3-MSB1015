@@ -1,15 +1,17 @@
 #!/usr/bin/env nextflow
 
-/** tab separated values file has the data - split the tsv by tab and set up column names
-* creates a map (AKA associative array) of ordered pairs - buffer slows the process down for testing purposes
-* set designates - that variable will be the channel 
-*/
 
 @Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
 @Grab(group='org.openscience.cdk', module='cdk-qsarmolecular', version='2.3')
 import net.bioclipse.managers.CDKManager
 import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor
 import org.openscience.cdk.interfaces.IAtomContainer
+
+/** a tab separated values file contains the data 
+* we split the tsv by tab and set up column names
+* creates a map (AKA associative array) of ordered pairs 
+* set designates - that variable name ( the channel) 
+*/
 
 Channel
     .fromPath("./short.tsv")                            
