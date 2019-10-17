@@ -20,7 +20,7 @@ Channel
 *   output from the exec line `results` is designated as `output_ch`.
 */
 
-process printSMILES {                                   
+process printJPlogP {                                   
     input:
     set wikidata, smiles from molecules_ch     
        
@@ -39,22 +39,26 @@ process printSMILES {
 	} catch (Exception exc) {
 	  println "Error in parsing this SMILE $smiles"
 	}
-      results = "${wikidata} \t ${jplogp}"    
+      results = "${wikidata} \t ${jplogp} \t "    
       
 }
 
-output_ch.subscribe {
-  println "Output : " + it
-}
+//output_ch.subscribe {
+	
+ // println "Output : " + it
+//}
 
 /** print with a new line at the end of each string. $ ensures the {} is treated as a string
 * `it` is an implicit variable
 */
 
-/** process calculateJPlogP {
-*    input:
-*     
-*    add maxForks1 to stop processes jumping from one CPU to another
-*    
-*    exec:  
-*/
+process writeFile {
+  input:
+	output_ch
+  output:
+  	Test
+    
+  exec: 
+	Test.append(output_ch)
+}
+
