@@ -3,6 +3,7 @@
 
 @Grab(group='io.github.egonw.bacting', module='managers-cdk', version='0.0.9')
 @Grab(group='org.openscience.cdk', module='cdk-qsarmolecular', version='2.3')
+
 import net.bioclipse.managers.CDKManager
 import org.openscience.cdk.qsar.descriptors.molecular.JPlogPDescriptor
 import org.openscience.cdk.interfaces.IAtomContainer
