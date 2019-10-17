@@ -33,23 +33,26 @@ public class Code {
 //   query Wikidata using specialised R package
 //   output  `query_result.tsv` molecules, (iso)SMILES in a file
 
-// Process 2b query CDK for JPlogP by parsing the SMILEs will be done in Nextflow
+// Process 2ab query CDK for JPlogP by parsing the SMILEs will be done in Nextflow
+// Comment: Does this need to be two processes? first parse smiles then calculate and make table?
 //    input molecules `query_result.tsv`
 //    import various CDK urls
 //    ensure error handling for missing values, typos
 //    output `JPlogP.tsv` molecules, (iso)SMILES, JPlogP  
 
-// Process 3 timing
-//     input start time of process 2 and end time of process 2
-//     take difference  = timing
-//     output timing
+// Process 3 timing WILL BE DONE MANUALLY using `time` on the command line `time run ./nextflow JPlogP.nf`
+//     duration of process 2 
+//     real    0m3.890s
+//     user    0m10.313s
+//     sys     0m1.250s
 
-// Process 4 make a text table
-//     input timing, number of threads
-//     output save a .csv file maybe so that I can display it on the Readme
+// Process 4 make a text table     MANUALLY not in nextflow
+//     input timing, parallel vs not parallel
+//     output something understandable tha I can display on the Readme
 
-// Process 5 find min max and median of all JPlogPs (use R? or Math.*)
-//    input JPlogP
+// Process 5 find min max and median of all JPlogPs (MANUALLY in R)
+// Comment: optional, if time allows
+//    input `JPlogP.tsv`
 //    output min, max, median
 
 
