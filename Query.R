@@ -1,26 +1,31 @@
+#===========
+# README
+#===========
 # Reuseable WikiData Molecules Query For Assignment 3 MSB1015 
-# Caroline Collins 6192527 with support from Ammar Ammar and Raphael Stolpe
+#============================================================
+# Caroline Collins 6192527
 # 16 October 2019
-
-#Run this file to obtain a .tsv file of all molecules in Wikidata database
-#with their canonical SMILES and isoSMILES
-
-#===============================================  
-# Note 
-# As a prerequisite, this notebook needs a certain Wikidata query R package 
+#
+# Run this code to obtain the `query_result.tsv` file of all the molecules
+# in the Wikidata database with their canonical SMILES and isoSMILES.
+#
+# Note : 
+# As a prerequisite, this code needs a certain Wikidata query R package 
 # which you can find here: https://github.com/bearloga/WikidataQueryServiceR
 #===================================================
-#INSTALL required library
+# INSTALL required library
 #====================================================
 library(WikidataQueryServiceR)
 
 #=================
-#QUERY WikiData
+# QUERY WikiData
 #=================
-#Note: if you wish to alter the query, change the WikiData query within the quotes below '' 
-# (eg P233 corresponds to canonical SMILES)
-#Information on identifiers and query testing 
-#can be found at https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor
+# Note: if you wish to alter the query, change the WikiData query (within the quotes '' ).
+# The following query indiscriminately extracts 
+# any and every compound with a (iso)SMILES entry from the database.
+# (P233 corresponds to canonical SMILES, P2017 to isomeric SMILES)
+# Information on identifiers and query testing 
+# can be found at https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor
 
 my_query <- 'SELECT DISTINCT ?compound ?smiles ?isoSmiles WHERE {
   ?compound wdt:P233 | wdt:P2017 [] .
@@ -28,11 +33,11 @@ my_query <- 'SELECT DISTINCT ?compound ?smiles ?isoSmiles WHERE {
   OPTIONAL { ?compound wdt:P2017 ?isoSmiles }
 }'
 
-query_result <- query_wikidata(my_query) #function query_wikidata requires library WikidataQueryServiceR
+query_result <- query_wikidata(my_query) #query_wikidata() requires library WikidataQueryServiceR
 
 #===========================
-#STORE RESULT IN A TSV FILE
+# STORE RESULT IN A TSV FILE
 #===========================
-write.table(query_result, file = "OneHundredSixtyThousandMols.tsv", sep = "\t", row.names = FALSE,
+write.table(query_result, file = "query_result.tsv", sep = "\t", row.names = FALSE,
             quote = F)
 #===============================END
