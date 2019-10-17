@@ -36,7 +36,7 @@ process printSMILES {
 	  molecule = cdk.fromSMILES(smiles)
 	  descriptor = new JPlogPDescriptor()
           jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
-	  // println "JPLogP : " + jplogp
+	  println "JPLogP : " + jplogp
 	} catch (Exception exc) {
 	  println "Error in parsing this SMILE $smiles"
 	}
