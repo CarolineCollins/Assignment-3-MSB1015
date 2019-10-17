@@ -28,7 +28,7 @@ process printSMILES {
       val results into output_ch
       
     exec:
-	println "Running.."   
+	println "Running.."   ;
 	cdk = new CDKmanager(".");
 	try {
 	  molecule = cdk.fromSMILES(smiles)
