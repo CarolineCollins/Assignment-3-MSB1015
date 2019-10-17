@@ -1,15 +1,23 @@
 # Assignment-3-MSB1015
 ### Synopsis
 A project to learn how to use Nextflow, SPARQL query, and CDK to calculate JPlogP on all the molecules in WikiData.
-Here on the README note the results of a comparison of computation times *parsing the SMILES and getting the JPlogP value* on different numbers of threads.
+Here on the README note the results of a comparison of computation times for *parsing the SMILES and getting the JPlogP value*.
+Compare times between a nextflow run with parallel computing restricted vs 
+a run employing parallel computing on all available CPU's.
 
 ### What can you find in this repository?
+- R code to send a query to Wikidata and create a .tsv file containing the results
+- nextflow code to calculate the JPlogP values of molecules from the .tsv file 
 
 ### How to make it run?
+- R code requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
+- The nextflow code can be run on any command line interface, I used Ubuntu App on Windows 10  
+
 #### Input
 #### Output
 #### How to adapt the code for reuse
-If you want to make the calculation for a different set of molecules change ...
+If you want to make the calculation for a different set of molecules 
+change the text of the query within the R code as detailed in the comments
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
