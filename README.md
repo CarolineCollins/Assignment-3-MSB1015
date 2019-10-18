@@ -1,10 +1,11 @@
 # Assignment-3-MSB1015
 ### Synopsis
 A project to learn how to use Nextflow, SPARQL query, and CDK to calculate JPlogP on *all* the molecules in WikiData.
+An investigation of parallel computing.  
 #### Task
-As an investigation of parallel computing we compare times between 
-a nextflow run with parallel computing restricted vs a nextflow run employing parallel computing on all available CPU's.
-Here on the README I will note the results of comparing the computation times 
+We compare times between   
+a restricted nextflow run (ie without parallel computing) vs a nextflow run employing parallel computing on all available CPU's.  
+Here on the README I will note the results of comparing the computation times   
 for *parsing the SMILES and getting their JPlogP values*.
 
 ### What can you find in this repository?
@@ -19,9 +20,9 @@ for *parsing the SMILES and getting their JPlogP values*.
 - The nextflow code can be run on any command line interface, I used Ubuntu App on Windows 10  
 
 #### Input
-- the Nextflow code accepts a .tsv file of molecules and their associated (iso)SMILES.
+- the Nextflow code accepts a .tsv file of molecules and their associated (iso)SMILES.  
 #### Output
-- the Nextflow code outputs and writes to a .tsv file molecules and their associated JPlogP values.
+- the Nextflow code outputs and writes to a .tsv file molecules and their associated JPlogP values.  
 #### How to adapt the code for reuse
 If you want to make the calculation for a different set of molecules, then 
 change the text of the query within the R code as detailed in the code comments.
@@ -31,7 +32,7 @@ The query given in this code is as follows (SPARQL query syntax):
   OPTIONAL { ?compound wdt:P233 ?smiles }  
   OPTIONAL { ?compound wdt:P2017 ?isoSmiles }  
   }**  
-  which indiscriminately returns everything from Wikidata having an (iso)SMILES. 
+  which indiscriminately returns everything from Wikidata having an (iso)SMILES.   
 #### Understanding Nextflow
 [Nextflow](https://www.nature.com/articles/nbt.3820) is a domain-specific language (DSL) that enables pipelines 
 with operations that can be written in any scripting language.
