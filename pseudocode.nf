@@ -38,7 +38,7 @@ public class Code {
 //    input molecules `query_result.tsv`
 //    import various CDK urls
 //    ensure error handling for missing values, typos
-//    output `JPlogP.tsv` molecules, (iso)SMILES, JPlogP  
+//    output print out  molecules and their JPlogP  
 
 // Process 3 timing WILL BE DONE MANUALLY using `time` on the command line `time run ./nextflow JPlogP.nf`
 //     duration of process 2 
