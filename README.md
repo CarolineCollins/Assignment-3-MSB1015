@@ -10,7 +10,7 @@ for *parsing the SMILES and getting their JPlogP values*.
 
 ### What can you find in this repository?
 - `thing.r` R code to send a query to Wikidata and create a .tsv file from the results
-- `thing.nf` nextflow code to calculate the JPlogP values of molecules from the .tsv file 
+- `thing.nf` nextflow code to get the JPlogP values of molecules from the .tsv file 
 - `query_result.tsv` the result of the SPARQL query (run from R code) 
 - `short.tsv` a toy data set of only 5 molecules with their SMILES.
 - supporting documents and a `logbook.md` of the learning process 
@@ -26,7 +26,7 @@ for *parsing the SMILES and getting their JPlogP values*.
 
 #### Output
 
-- the Nextflow code outputs and writes to a .tsv file molecules and their associated JPlogP values.  
+- the Nextflow code prints out molecules and their associated JPlogP values.  
 
 #### How to adapt the code for reuse
 
