@@ -16,14 +16,20 @@ for *parsing the SMILES and getting their JPlogP values*.
 - supporting documents and a `logbook.md` of the learning process 
 
 ### How to make it run?
+
 - R code requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
 - The nextflow code can be run on any command line interface, I used Ubuntu App on Windows 10  
 
 #### Input
+
 - the Nextflow code accepts a .tsv file of molecules and their associated (iso)SMILES.  
+
 #### Output
+
 - the Nextflow code outputs and writes to a .tsv file molecules and their associated JPlogP values.  
+
 #### How to adapt the code for reuse
+
 If you want to make the calculation for a different set of molecules, then 
 change the text of the query within the R code as detailed in the code comments.
 The query given in this code is as follows (SPARQL query syntax):  
@@ -32,8 +38,10 @@ The query given in this code is as follows (SPARQL query syntax):
   OPTIONAL { ?compound wdt:P233 ?smiles }  
   OPTIONAL { ?compound wdt:P2017 ?isoSmiles }  
   }**  
-  which indiscriminately returns everything from Wikidata having an (iso)SMILES.   
+  which indiscriminately returns everything from Wikidata having an (iso)SMILES. 
+  
 #### Understanding Nextflow
+
 [Nextflow](https://www.nature.com/articles/nbt.3820) is a domain-specific language (DSL) that enables pipelines 
 with operations that can be written in any scripting language.
 In Nextflow any set of results can be associated with a single command line 
