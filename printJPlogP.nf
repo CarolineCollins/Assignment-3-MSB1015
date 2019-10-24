@@ -13,7 +13,7 @@ Channel
     .fromPath("./short.tsv")                            
     .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') 
     .map{ row -> tuple(row.wikidata, row.smiles) } 
-    .buffer(size:5,remainder:true)
+    //.buffer(size:5,remainder:true)
     .set { molecules_ch }                               
   
 
