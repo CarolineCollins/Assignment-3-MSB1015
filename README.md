@@ -22,8 +22,10 @@ for *parsing the SMILES and getting their JPlogP values*.
 - R code `Query.r` requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
 - The nextflow code `printJPlogP.nf` can be run on any command line interface, I used Ubuntu App on Windows 10  
 - `nextflow.config` To make this workflow reproducible I have saved a copy of the config file.   
-   To reproduce my timing experiment, you can alter directives *cpus* and/or *maxForks*.
-   Nextflow takes care of calling `nextflow.config` behind the scenes for you.
+   Nextflow takes care of calling `nextflow.config` behind the scenes for you.  
+- To reproduce my timing experiment, you can comment and uncomment the directive *maxForks 1* inside the process in `printJPlogP.nf`  
+   maxForks 1 forces the process to run sequentially / deleting or commenting it allows free parallelisation on available CPUs
+  
 
 #### Input
 
