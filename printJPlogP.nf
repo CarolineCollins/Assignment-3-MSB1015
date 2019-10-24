@@ -21,7 +21,8 @@ Channel
 process printJPlogP {                                   
     input:
     set wikidata, smiles, isoSmiles from molecules_ch     
-       
+    
+    maxForks 1   
   
     exec:
 	println "Running.."  
