@@ -15,17 +15,12 @@ Channel
     .map{ row -> tuple(row.wikidata, row.smiles) }                    
     .set { molecules_ch }                               
   
-/** this node just has input-output- exec, AND .subscribe
-*   input from the `molecules_ch` channel is designated
-*   output from the exec line `results` is designated as `output_ch`.
-*/
+
 
 process printJPlogP {                                   
     input:
     set wikidata, smiles from molecules_ch     
        
-    output:
-      val results into output_ch
       
     exec:
 	println "Running.."   
@@ -34,8 +29,7 @@ process printJPlogP {
 	  molecule = cdk.fromSMILES(smiles)
 	  descriptor = new JPlogPDescriptor()
           jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
-	  //println "JPLogP : " + jplogp
-	  //myFile.tsv << ${molecule} + "\t" + ${jplogp}
+	  println "JPLogP : " + jplogp
 	} catch (Exception exc) {
 	  println "Error in parsing this SMILE $smiles"
 	}
@@ -52,14 +46,9 @@ process printJPlogP {
 * `it` is an implicit variable
 */
 
-process writeFile {
-  input:
-	set string from output_ch
-  output:
-  	myFile
-    
-  exec: 
-  	myFile.text = "molecule \t JPlogP \t"
-	myFile.append({string})
-}
 
+
+/** this node process printJPlogP
+*   input from the `molecules_ch` channel is designated
+*   output from the exec line `results` is designated as `output_ch`.
+*/
