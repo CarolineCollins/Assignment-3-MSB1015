@@ -10,7 +10,7 @@ import org.openscience.cdk.interfaces.IAtomContainer
 
 
 Channel
-    .fromPath("./short_with_isoSmiles.tsv")                            
+    .fromPath("./short_with_isoSMILES.tsv")                            
     .splitCsv(header: ['wikidata', 'smiles' , 'isoSMILES'], sep:'\t') 
     .map{ row -> tuple(row.wikidata, row.smiles, row.isoSmiles) } 
     //.buffer(size:5,remainder:true)
