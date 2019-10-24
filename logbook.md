@@ -333,4 +333,18 @@ executor >  local (5)
 
 real    0m6.937s  
 user    0m18.453s  
-sys     0m2.156s
+sys     0m2.156s  
+
+================================  
+Error when introducing isoSMILES
+
+<<Error executing process > 'printJPlogP (3)'
+
+Caused by:
+  Unknown variable 'jplogp'>> this is the process did not run because not set up right for isoSMILES.
+
+Tried and failed to deal with the isoSMILES in the toy dataset
+needed to fork back from before isoSMILES in printJPlogP.nf
+Possibilities: 
+- delete the third column
+- work out how to rewrite the code with ifs?
