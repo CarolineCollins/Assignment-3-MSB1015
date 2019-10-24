@@ -10,9 +10,9 @@ import org.openscience.cdk.interfaces.IAtomContainer
 
 
 Channel
-    .fromPath("./short.tsv")                            
-    .splitCsv(header: ['wikidata', 'smiles'], sep:'\t') 
-    .map{ row -> tuple(row.wikidata, row.smiles) } 
+    .fromPath("./short_with_isoSmiles.tsv")                            
+    .splitCsv(header: ['wikidata', 'smiles' , 'isoSmiles'], sep:'\t') 
+    .map{ row -> tuple(row.wikidata, row.smiles, row.isoSmiles) } 
     //.buffer(size:5,remainder:true)
     .set { molecules_ch }                               
   
@@ -20,14 +20,14 @@ Channel
 
 process printJPlogP {                                   
     input:
-    set wikidata, smiles from molecules_ch     
+    set wikidata, smiles, isoSmiles from molecules_ch     
        
       
     exec:
 	println "Running.."   
 	cdk = new CDKManager(".");
 	try {
-	  molecule = cdk.fromSMILES(smiles)
+	  molecule = cdk.fromSMILES(smiles, isoSmiles)
 	  descriptor = new JPlogPDescriptor()
           jplogp = descriptor.calculate(molecule.getAtomContainer()).value.toString()
 	  println "JPLogP : " + jplogp
