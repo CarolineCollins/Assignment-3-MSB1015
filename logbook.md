@@ -4,7 +4,7 @@ This involved wrestling with the command line, so I have put a command line glos
 for the benefit of future me and any other beginners that pass this way.
 On Monday we picked up a lot of resources about NextFlow and ideas about parallel computing, 
 today Wednesday was a practical session during which I set up the Assignment 3 repository and peopled it with some files.
-Egon provided us with templates,  simple for Nextflow, and a short .tsv file to start us off.
+Egon provided us with templates,  `simple.nf` for Nextflow, and a `short.tsv` file to start us off.
 ##### Lecture 1: 
 - emphasis on parallel computing
 - examples of workflow systems : KNIME, Apache Taverna, BIOVIA
@@ -16,7 +16,6 @@ eg in KNIME in a relational database (ie not in memory) and a consequence is tha
 ##### Nextflow:
 Why yet another workflow?
 ` https://www.nextflow.io/index.html#Features `
-
 Recent, since 2017. One design decision was not to make it graphical. 
 Information channels link nodes.
 You can see some examples on `openrisknet.org`
@@ -24,9 +23,9 @@ Egon's opinion:
 - one defect of N is that it is hard to see what is going on in background.
  This makes it super-important to document what you think is going on.
  I struggle to see the data in the channel
- I cannot easily how many processes have started
+ I cannot see easily how many processes have started
 - NB reading from a channel is not at all the same as reading from a file eg
- the order is not guaranteed
+ the *order is not guaranteed*
 - The multiline string defined within """   """ is something Groovy will run on the command line
 - N is smart, but not v transparent, so you need to make up for this in your documentation.
 - Manon asks in what platform we will be working - coding in a plain text editor like Notepad
@@ -253,6 +252,8 @@ Running..
 Running..
 executor >  local (4)
 [ae/ff4165] process > printSMILES (1) [  0%] 0 of 4
+
+
 JPLogP : 3.364195829454932
 JPLogP : 2.797978430439075
 Running..
@@ -269,3 +270,20 @@ executor >  local (5)
 real    0m7.093s
 user    0m18.844s
 sys     0m2.219s
+
+#### Day 18
+The last week was devoted to Network Biology completing research project and studying for today's exam.
+Tbh I was also very demotivated by the assignment.
+I felt, when the assignment task was redefined for the nth time, like I had done a lot of work on trying to achieve some functionality that  was now not part of the goal.
+Feeling better now, rationalising this as:  
+- good training for IRL, goals are constantly being redefined
+- good training for programming skills, even if they don't go to the Assignment, they go towards my overall experience.
+
+##### Where I am 
+Challenges remaining:
+- buffer question: buffer induces tuples error
+- choice of maxForks / cpus / where does buffer fit into this - explanations unsatisfactory to me
+- still questioning re Egon's email whether we will see any speeding up with more CPUs
+- short.tsv had only 2 columns , data has 3 columns. This means that when you input data to the process, it needs to say `set wikidata, smiles, isosmiles` (keep naming consistent over all three) `from channel`. Also when you create the `channel`, you need to make sure that isosmiles appears twice, in the `splitCsv` and the `tuple` inside the `map`
+
+Deal with the isoSMILES question first: create short_with_isoSMILES.tsv for testing
