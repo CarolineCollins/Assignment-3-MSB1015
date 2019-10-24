@@ -285,3 +285,5 @@ Challenges remaining:
 - choice of maxForks / cpus / where does buffer fit into this - explanations unsatisfactory to me
 - still questioning re Egon's email whether we will see any speeding up with more CPUs
 - short.tsv had only 2 columns , data has 3 columns. This means that when you input data to the process, it needs to say `set wikidata, smiles, isosmiles` (keep naming consistent over all three) `from channel`. Also when you create the `channel`, you need to make sure that isosmiles appears twice, in the `splitCsv` and the `tuple` inside the `map`
+
+Deal with the isoSMILES question first: create short_with_isoSMILES.tsv for testing
