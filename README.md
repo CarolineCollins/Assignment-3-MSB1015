@@ -9,24 +9,28 @@ Here on the README I will note the results of comparing the computation times
 for *parsing the SMILES and getting their JPlogP values*.
 
 ### What can you find in this repository?
-- `thing.r` R code to send a query to Wikidata and create a .tsv file from the results
-- `thing.nf` nextflow code to get the JPlogP values of molecules from the .tsv file 
-- `query_result.tsv` the result of the SPARQL query (run from R code) 
-- `short.tsv` a toy data set of only 5 molecules with their SMILES.
--  a `logbook.md` of the learning process and various useful files from the development process 
+- `Query.r` reuseable, fully-documneted R code to send a query to Wikidata and create a .tsv file from the results
+- `printJPlogP.nf` nextflow code to get JPlogP values of molecules from .tsv file (documentation here in `README.md` ) 
+- `nextflow.config` nextflow configuration file. 
+- `query_result.tsv` the result of the SPARQL query (run from R code). 
+- `short.tsv` a toy data set of only 5 molecules with their SMILES (2 columns).
+- `short_with_isoSMILES.tsv` a toy data set of 10 molecules with (iso)SMILES (3 columns).
+-  a `logbook.md` of the learning process
 
 ### How to make it run?
 
 - R code requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
 - The nextflow code can be run on any command line interface, I used Ubuntu App on Windows 10  
+- `nextflow.config` to make this workflow truly reproducible I have saved a copy of the config file.   
+   Nextflow takes care of calling `nextflow.config` behind the scenes for you.
 
 #### Input
 
-- the Nextflow code accepts a .tsv file of molecules and their associated (iso)SMILES.  
+- the Nextflow code `printJPlogP.nf` accepts the `query_result.tsv` file of molecules and their associated (iso)SMILES.  
 
 #### Output
 
-- the Nextflow code prints out molecules and their associated JPlogP values.  
+- the Nextflow code `printJPlogP.nf` prints out molecules and their associated JPlogP values.  
 
 #### How to adapt the code for reuse
 
@@ -49,8 +53,28 @@ and reproduced or adapted as required. Workflows can even be resumed using cache
 Each operation has an input and output and outputs are "streamed" between operations ("processes") in "channels".
 Under the "dataflow paradigm" processes start automatically as data are received in the channel.
 This approach enables parallelization.  
-NB reading from a channel is not at all the same as reading from a file, the most remarkable difference for new users being that the *order is not guaranteed*.
+NB reading from a channel is not at all the same as reading from a file,   
+the most remarkable difference for new users being that the *order is not guaranteed*.
 
+##### Parallelisation
+
+For the purposes of this Assignment we had to investigate techniques to restrict *parallelisation*.
+In the `nextflow.config` file we can define the number of logical CPU required by the process.
+Here we can also specify maxForks, a directive which allows us to define the maximum number  
+of process instances that can be executed in parallel.   
+By default this value is equals to the number of CPU cores available minus 1.
+On the machine on which I am developing the Assignment, I have 4 CPU, giving a default maxForks of 3.  
+If I want to execute my process sequentially (ie NO parallelisation), I set maxForks to 1.
+I cannot find any documentation that clarifies the effects of combining `maxForks` and `cpus`.
+
+##### Error handling
+
+In `nextflow.config` the *errorStrategy* directive defines how an error condition is managed by the process. 
+This overrides the default by which the process would stop immediately, terminating the entire pipeline. 
+In `nextflow.config` the *maxErrors* directive specifies  
+the maximum number of times a process can *fail* when using the
+retry error strategy. Similarly *maxRetries* defines the maximum number of times the same process execution can
+be retried in case of an error. Particularly useful when querying remote server, as in this case.
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
