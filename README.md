@@ -8,6 +8,12 @@ a restricted nextflow run (ie without parallel computing) vs a nextflow run empl
 Here on the README I will note the results of comparing the computation times   
 for *parsing the SMILES and getting their JPlogP values*.
 
+### Results
+| parallelisation | sys time     | command     |
+|-----------------|--------------|-------------|
+| NO  (1 CPU)     | 11m19.594s   | maxForks 1  |
+| YES (4 CPU)     |      |             |
+
 ### What can you find in this repository?
 - `Query.r` reuseable, fully-documented R code to send a query to Wikidata and create a .tsv file from the results
 - `printJPlogP.nf` nextflow code to get JPlogP values of molecules from .tsv file (documentation here in `README.md` ) 
