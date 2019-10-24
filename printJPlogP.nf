@@ -11,7 +11,7 @@ import org.openscience.cdk.interfaces.IAtomContainer
 
 Channel
     .fromPath("./short_with_isoSmiles.tsv")                            
-    .splitCsv(header: ['wikidata', 'smiles' , 'isoSmiles'], sep:'\t') 
+    .splitCsv(header: ['wikidata', 'smiles' , 'isoSMILES'], sep:'\t') 
     .map{ row -> tuple(row.wikidata, row.smiles, row.isoSmiles) } 
     //.buffer(size:5,remainder:true)
     .set { molecules_ch }                               
