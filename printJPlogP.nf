@@ -13,7 +13,6 @@ Channel
     .fromPath("./query_result.tsv")                            
     .splitCsv(header: ['wikidata', 'smiles' , 'isoSmiles'], sep:'\t') 
     .map{ row -> tuple(row.wikidata, row.smiles, row.isoSmiles) } 
-    //.buffer(size:5,remainder:true)
     .set { molecules_ch }                               
   
 
@@ -22,7 +21,7 @@ process printJPlogP {
     input:
     set wikidata, smiles, isoSmiles from molecules_ch     
     
-    maxForks 1   
+    /* maxForks 1 */  
   
     exec:
 	println "Running.."  
