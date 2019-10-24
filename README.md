@@ -13,7 +13,7 @@ for *parsing the SMILES and getting their JPlogP values*.
 - `thing.nf` nextflow code to get the JPlogP values of molecules from the .tsv file 
 - `query_result.tsv` the result of the SPARQL query (run from R code) 
 - `short.tsv` a toy data set of only 5 molecules with their SMILES.
-- supporting documents and a `logbook.md` of the learning process 
+-  a `logbook.md` of the learning process and various useful files from the development process 
 
 ### How to make it run?
 
@@ -48,7 +48,9 @@ In Nextflow any set of results can be associated with a single command line
 and reproduced or adapted as required. Workflows can even be resumed using cached results.
 Each operation has an input and output and outputs are "streamed" between operations ("processes") in "channels".
 Under the "dataflow paradigm" processes start automatically as data are received in the channel.
-This approach enables parallelization.
+This approach enables parallelization.  
+NB reading from a channel is not at all the same as reading from a file, the most remarkable difference for new users being that the *order is not guaranteed*.
+
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
