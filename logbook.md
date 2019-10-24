@@ -342,9 +342,59 @@ Error when introducing isoSMILES
 
 Caused by:
   Unknown variable 'jplogp'>> this is the process did not run because not set up right for isoSMILES.
-
 Tried and failed to deal with the isoSMILES in the toy dataset
 needed to fork back from before isoSMILES in printJPlogP.nf
 Possibilities: 
 - delete the third column
 - work out how to rewrite the code with ifs?
+##### Breakthrough
+Used the toy data file with 10 molecules and three columns
+to create an improved printJPlogP that can deal with the three columns.
+Lack of familiarity and the niche nature of the topic mean that   
+it is proving impossible to find how exactly to calculate JPlogP of the molecules that have no SMILES,  
+but only an isoSMILES. This github repo is the third result on Google for " cdk.fromsmiles" isosmiles !!!
+Thanks to error catching (?) these molecules are displaying as JPlogP = NaN, which is, at least, better   
+than giving a bad value.
+Due to time constraints I will leave this CDK work there and progress with the issue  
+of cpus, maxForks, buffer - different ways of constraining or forcing parallelisation.  
+
+##### Example of output at this stage Thursday evening 20:30.  
+
+caroliine@DESKTOP-ENJSVUC:~/tmp/Assignment-3-MSB1015$ time ./nextflow run printJPlogP.nf  
+N E X T F L O W  ~  version 19.07.0  
+Launching `printJPlogP.nf` [soggy_cuvier] - revision: 8c42cfc18a  
+[-        ] process > printJPlogP -  
+Running..  
+Running..  
+Running..  
+executor >  local (4)  
+[1e/8616fa] process > printJPlogP (4) [  0%] 0 of 4  
+executor >  local (5)  
+[32/d1560f] process > printJPlogP (1) [ 20%] 1 of 5  
+116601 not found  
+CDKMolecule:F10S2 has JPLogP : NaN   
+CDKMolecule:F3NS has JPLogP : 1.5897999314804134  
+Running.. 
+CDKMolecule:C9H10N2O3 has JPLogP : -0.01716909274364853  
+Running..le:C16H14F3N3O2S has JPLogP : 3.2035713875857192  
+Running..le:C6H12O has JPLogP : 1.6961867420121592  
+Error in parsing this SMILE http://www.wikidata.org/entity/Q189523  
+Running..  
+CDKMolecule:C12H21NO8S has JPLogP : -0.9084998555290851  
+CDKMolecule:C8H10FNO2S has JPLogP : 0.9041606892944587  
+executor >  local (8)  
+[81/800a49] process > printJPlogP (9) [ 50%] 4 of 8  
+executor >  local (10)  
+[61/58363f] process > printJPlogP (10) [100%] 10 of 10 ✔  
+
+real    0m14.334s
+user    0m35.703s
+sys     0m4.563s
+
+===================================================
+
+
+
+
+
+
