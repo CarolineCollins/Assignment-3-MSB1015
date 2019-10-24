@@ -9,10 +9,11 @@ Here we note the results of comparing the computation times
 for *parsing the SMILES and getting their JPlogP values*.
 
 ### Results
-| parallelisation | sys time *   | command     |
-|-----------------|--------------|-------------|
-| NO  (1 CPU)     | 11m19.594s   | maxForks 1  |
-| YES (4 CPU)     |  7m46.938s   |    -        |
+
+| parallelisation | sys time *   | command     |  
+|-----------------|--------------|-------------|  
+| NO  (1 CPU)     | 11m19.594s   | maxForks 1  |  
+| YES (4 CPU)     |  7m46.938s   |    -        |  
 
 * We record CPU time used by the process. A run on the command line with the following syntax  
 ` >time ./nextflow printJPlogP.nf`    gives us a printout of the sys time - after the run has finished.
