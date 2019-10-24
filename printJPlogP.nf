@@ -46,6 +46,10 @@ process printJPlogP {
 	  println "Error in parsing this isoSMILE $isoSmiles"
 	}	 
 	}
-}
+} 
+             
+  
 
+
+        
 
