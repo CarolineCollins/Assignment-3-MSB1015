@@ -285,5 +285,52 @@ Challenges remaining:
 - choice of maxForks / cpus / where does buffer fit into this - explanations unsatisfactory to me
 - still questioning re Egon's email whether we will see any speeding up with more CPUs
 - short.tsv had only 2 columns , data has 3 columns. This means that when you input data to the process, it needs to say `set wikidata, smiles, isosmiles` (keep naming consistent over all three) `from channel`. Also when you create the `channel`, you need to make sure that isosmiles appears twice, in the `splitCsv` and the `tuple` inside the `map`
+Create
+Tool to Deal with the isoSMILES question : create short_with_isoSMILES.tsv for testing
+Refurbish old printJPlogP code
+Discover how to use nano to do more local testing and cut down on commits 
+Discover that I can write cpus 4 in the process part of the code to control the parallelisation process
+Discover that I get an error when running with cpus 8 because I "only have 4 cpus available" good to know!
+Example of command line output first run with cpus 4, second run with cpus 1:  
 
-Deal with the isoSMILES question first: create short_with_isoSMILES.tsv for testing
+caroliine@DESKTOP-ENJSVUC:~/tmp/Assignment-3-MSB1015$ time ./nextflow run printJPlogP.nf
+N E X T F L O W  ~  version 19.07.0
+Launching `printJPlogP.nf` [scruffy_bell] - revision: 55b8d064b4
+[-        ] process > printJPlogP -
+executor >  local (1)
+[48/1ea657] process > printJPlogP (4) [  0%] 0 of 1
+JPLogP : 3.476281307136401
+Running..
+JPLogP : 3.364195829454932
+Running..
+JPLogP : 3.476281307136401
+Running..
+JPLogP : 2.797978430439075
+executor >  local (5)
+[89/e1d2c1] process > printJPlogP (5) [100%] 5 of 5 ✔  
+
+
+real    0m6.823s  
+user    0m17.578s  
+sys     0m2.188s  
+caroliine@DESKTOP-ENJSVUC:~/tmp/Assignment-3-MSB1015$ nano printJPlogP.nf  
+caroliine@DESKTOP-ENJSVUC:~/tmp/Assignment-3-MSB1015$ time ./nextflow run printJPlogP.nf  
+N E X T F L O W  ~  version 19.07.0
+Launching `printJPlogP.nf` [chaotic_gilbert] - revision: 793e5c9a89
+Running..
+[-        ] process > printJPlogP -
+Running..
+Running..
+executor >  local (4)
+[0a/fb0d8d] process > printJPlogP (3) [  0%] 0 of 4
+JPLogP : 3.476281307136401
+JPLogP : 3.476281307136401
+JPLogP : 2.797978430439075
+JPLogP : 3.364195829454932
+executor >  local (5)
+[8c/a95fd7] process > printJPlogP (5) [100%] 5 of 5 ✔  
+
+
+real    0m6.937s  
+user    0m18.453s  
+sys     0m2.156s
