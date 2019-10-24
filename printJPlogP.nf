@@ -22,7 +22,7 @@ process printJPlogP {
     input:
     set wikidata, smiles, isoSmiles from molecules_ch     
        
-      
+  
     exec:
 	println "Running.."   
 	cdk = new CDKManager(".");
