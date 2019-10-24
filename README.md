@@ -9,7 +9,7 @@ Here on the README I will note the results of comparing the computation times
 for *parsing the SMILES and getting their JPlogP values*.
 
 ### What can you find in this repository?
-- `Query.r` reuseable, fully-documneted R code to send a query to Wikidata and create a .tsv file from the results
+- `Query.r` reuseable, fully-documented R code to send a query to Wikidata and create a .tsv file from the results
 - `printJPlogP.nf` nextflow code to get JPlogP values of molecules from .tsv file (documentation here in `README.md` ) 
 - `nextflow.config` nextflow configuration file. 
 - `query_result.tsv` the result of the SPARQL query (run from R code). 
@@ -19,9 +19,10 @@ for *parsing the SMILES and getting their JPlogP values*.
 
 ### How to make it run?
 
-- R code requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
-- The nextflow code can be run on any command line interface, I used Ubuntu App on Windows 10  
-- `nextflow.config` to make this workflow truly reproducible I have saved a copy of the config file.   
+- R code `Query.r` requires installation of the [R package which you can find here](https://github.com/bearloga/WikidataQueryServiceR)
+- The nextflow code `printJPlogP.nf` can be run on any command line interface, I used Ubuntu App on Windows 10  
+- `nextflow.config` To make this workflow reproducible I have saved a copy of the config file.   
+   To reproduce my timing experiment, you can alter directives *cpus* and/or *maxForks*.
    Nextflow takes care of calling `nextflow.config` behind the scenes for you.
 
 #### Input
