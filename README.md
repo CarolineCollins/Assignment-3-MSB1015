@@ -74,21 +74,19 @@ the most remarkable difference for new users being that the *order is not guaran
 
 ##### Parallelisation
 For the purposes of this Assignment we had to investigate techniques to restrict *parallelisation*.
-In the `nextflow.config` file we can define the number of logical CPU required by the process.
-Here we can also specify maxForks, a directive which allows us to define the maximum number  
+In the nextflow we can define the number of logical CPU required by the process.
+We can also specify `maxForks`, a directive which defines the maximum number  
 of process instances that can be executed in parallel.   
-By default this value is equals to the number of CPU cores available minus 1.
-On the machine on which I am developing the Assignment, I have 4 CPU, giving a default maxForks of 3.  
-If I want to execute my process sequentially (ie NO parallelisation), I set maxForks to 1.
-I cannot find any documentation that clarifies the effects of combining `maxForks` and `cpus`.
+By default this value is equal to the number of CPU cores available minus 1.  
+If I want to execute my process sequentially (ie WITHOUT parallelisation), I set maxForks to 1.
 
 ##### Error handling
 In `nextflow.config` the *errorStrategy* directive defines how an error condition is managed by the process. 
 This overrides the default by which the process would stop immediately, terminating the entire pipeline. 
 In `nextflow.config` the *maxErrors* directive specifies  
 the maximum number of times a process can *fail* when using the
-retry error strategy. Similarly *maxRetries* defines the maximum number of times the same process execution can
-be retried in case of an error. Particularly useful when querying remote server, as in this case.
+retry error strategy. Similarly, *maxRetries* defines the maximum number of times the *same* process execution can
+be retried in case of an error. Useful when querying remote server, as in this case.
               
 ### Useful resources:
 - WikiData SPARQL query `https://query.wikidata.org/`
@@ -99,7 +97,6 @@ be retried in case of an error. Particularly useful when querying remote server,
 - JPlogP `https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0316-5`
 - Nextflow `https://www.nextflow.io/docs/latest/basic.html`
 - Ubuntu and the command line `https://tutorials.ubuntu.com/tutorial/command-line-for-beginners#0`
-- Markdown `https://www.markdownguide.org/basic-syntax`
 
 ### References
 - Plante J, Werner S. JPlogP: an improved logP predictor trained using predicted data. Journal of Cheminformatics. 2018;10(1):61.
